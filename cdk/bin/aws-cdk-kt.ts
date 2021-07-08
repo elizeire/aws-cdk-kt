@@ -2,6 +2,7 @@
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import {LambdaCrudStack, LambdaCrudStackProps} from "../lib/stack/lambda-crud-stack";
+import {Stack} from "@aws-cdk/core";
 
 const app = new cdk.App();
 
@@ -14,5 +15,7 @@ const props: LambdaCrudStackProps = {
     tags: {},
 }
 
-new LambdaCrudStack(app, "basic-lambda-crud-stack", props);
+let stack = new Stack(app,"main-stack",props);
+
+new LambdaCrudStack(stack, "basic-lambda-crud-stack", props);
 

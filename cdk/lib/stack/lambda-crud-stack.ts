@@ -25,7 +25,7 @@ export class LambdaCrudStack extends NestedStack {
     constructor(scope: Construct, id: string, props: LambdaCrudStackProps) {
         super(scope, id);
 
-        const documentType = 'docType';
+        const documentType = 'doctype';
 
         const lambdaProps: BasicLambdaFunctionProps = {
             projectName: props.projectName,
